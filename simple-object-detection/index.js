@@ -144,7 +144,7 @@ async function runAndVisualizeInference(model) {
 async function init() {
   const LOCAL_MODEL_PATH = 'object_detection_model/model.json';
   const HOSTED_MODEL_PATH =
-      'https://storage.googleapis.com/tfjs-examples/simple-object-detection/dist/object_detection_model/model.json';
+      'https://raw.githubusercontent.com/mheskol/data/main/model.json';
 
   // Attempt to load locally-saved model. If it fails, activate the
   // "Load hosted model" button.
