@@ -33,6 +33,7 @@ const loadHostedModel = document.getElementById('load-hosted-model');
 const inferenceTimeMs = document.getElementById('inference-time-ms');
 const trueObjectClass = document.getElementById('true-object-class');
 const predictedObjectClass = document.getElementById('predicted-object-class');
+const intputImg = document.getElementById('inputimg');
 
 const TRUE_BOUNDING_BOX_LINE_WIDTH = 2;
 const TRUE_BOUNDING_BOX_STYLE = 'rgb(255,0,0)';
@@ -106,7 +107,7 @@ async function runAndVisualizeInference(model) {
 
   const t0 = tf.util.now();
   // Runs inference with the model.
-  const modelOut = await model.predict(images).data();
+  const modelOut = await model.predict(intputImg).data();
   inferenceTimeMs.textContent = `${(tf.util.now() - t0).toFixed(1)}`;
 
   // Visualize the true and predicted bounding boxes.
